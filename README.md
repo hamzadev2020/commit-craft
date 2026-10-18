@@ -1,103 +1,64 @@
 # ⚡ CommitCraft
 
-AI-powered Git commit messages using Google Gemini. Generate, review, edit, and commit smarter.
+AI-powered Git commit message generator using Google Gemini.
 
-## ✨ Features
+## Features
 
-- Automatically generates Conventional Commit messages.
+- Generate Conventional Commit messages with AI.
 - Review, regenerate, or edit messages before committing.
 - Works with any Git repository.
-- Keeps your Gemini API key in a local `.env` file.
+- Keeps API credentials in a local `.env` file.
 
-## 🚀 Installation
-
-### 1. Clone the repository
+## Installation
 
 ```bash
 git clone https://github.com/YOUR-USERNAME/commit-craft.git
 cd commit-craft
-```
-
-Replace `YOUR-USERNAME` with the GitHub username that owns the repository.
-
-### 2. Install dependencies
-
-```bash
 npm install
 ```
 
-### 3. Configure your Gemini API key
+Replace `YOUR-USERNAME` with the repository owner's GitHub username.
 
-Create your local `.env` file from the example:
+## Configure Gemini API
 
-**Windows PowerShell:**
+Create your local environment file:
+
+```bash
+```
+
+On Windows PowerShell, run:
+
 ```powershell
 Copy-Item .env.example .env
 notepad .env
 ```
 
-**macOS / Linux:**
-```bash
-cp .env.example .env
-nano .env
-```
-
-Add your own Gemini API key:
+Add your own API key to `.env`:
 
 ```env
 GEMINI_API_KEY=your_gemini_api_key_here
 ```
 
-Save the file. Keep `.env` private and never upload it to GitHub.
+Never upload your real `.env` file or share your API key.
 
-## 💻 How to use CommitCraft
+## Usage
 
-You can use CommitCraft with any Git project on your computer.
-
-### 1. Open your project
+Open the Git repository where you want to make a commit, then stage the files you want to include:
 
 ```bash
-cd /path/to/your-project
+git add path/to/your-file
 ```
 
-On Windows, use the actual path to your project folder.
-
-### 2. Stage the changes you want to commit
-
-```bash
-git add path/to/your-changed-file
-```
-
-Replace the example path with the file or files you want to commit.
-
-### 3. Run CommitCraft
-
-```bash
-node /path/to/commit-craft/index.js
-```
-
-Replace `/path/to/commit-craft/index.js` with the actual location of your cloned CommitCraft folder.
-
-On Windows PowerShell, for example:
+Run CommitCraft using the path where you installed it:
 
 ```powershell
-node "C:\Users\YourName\tools\commit-craft\index.js"
+node "C:\path\to\commit-craft\index.js"
 ```
 
-Run this command from inside your target project folder.
+Choose whether to accept the generated message, regenerate it, edit it manually, or cancel.
 
-### 4. Choose an action
+## Security
 
-- **Enter / y** — Commit using the generated message.
-- **r** — Generate another message.
-- **e** — Enter your own commit message.
-- **q** — Cancel.
-
-## 🔐 Security
-
-- Never commit your `.env` file.
-- Use your own Gemini API key.
-- Keep `.env.example` in GitHub, but leave the real `.env` out.
-- Make sure `.env` is listed in `.gitignore`.
+Keep `.env` private. Only commit `.env.example`, never your real API credentials.
 
 Happy committing! 🚀
