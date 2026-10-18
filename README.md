@@ -1,0 +1,2 @@
+# commit-craft
+Happy committing! 🚀
