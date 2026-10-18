@@ -10,7 +10,15 @@
   "scripts": {
     "start": "node index.js"
   },
-  "keywords": ["git", "ai", "commit", "gemini"],
+  "keywords": [
+    "git",
+    "ai",
+    "commit",
+    "gemini"
+  ],
   "author": "Hamz",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^18.0.8"
+  }
 }
