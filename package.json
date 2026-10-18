@@ -1,0 +1,16 @@
+{
+  "name": "commit-craft",
+  "version": "1.0.0",
+  "description": "Smart AI commit generator using Gemini",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "commit-craft": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": ["git", "ai", "commit", "gemini"],
+  "author": "Hamz",
+  "license": "MIT"
+}
