@@ -1,64 +1,82 @@
-# ⚡ CommitCraft
+## 🚀 Installation & Setup (Windows)
 
-AI-powered Git commit message generator using Google Gemini.
+### Prerequisites
+- [Node.js](https://nodejs.org/) version 18 or newer
+- [Git](https://git-scm.com/)
+- Your own [Gemini API Key](https://aistudio.google.com/apikey)
 
-## Features
+### 1. Clone the repository
 
-- Generate Conventional Commit messages with AI.
-- Review, regenerate, or edit messages before committing.
-- Works with any Git repository.
-- Keeps API credentials in a local `.env` file.
-
-## Installation
-
-```bash
-git clone https://github.com/YOUR-USERNAME/commit-craft.git
-cd commit-craft
-npm install
-```
-
-Replace `YOUR-USERNAME` with the repository owner's GitHub username.
-
-## Configure Gemini API
-
-Create your local environment file:
-
-```bash
-```
-
-On Windows PowerShell, run:
+Open PowerShell and run:
 
 ```powershell
-Copy-Item .env.example .env
-notepad .env
+git clone https://github.com/hamzadev2020/commit-craft.git
+cd commit-craft
 ```
 
-Add your own API key to `.env`:
+### 2. Run the setup script
 
-```env
-GEMINI_API_KEY=your_gemini_api_key_here
+```powershell
+powershell -ExecutionPolicy Bypass -File .\setup.ps1
 ```
 
-Never upload your real `.env` file or share your API key.
+The setup script automatically installs dependencies, asks for your Gemini API key if needed, saves it locally in `.env`, and configures the global `commitcraft` command.
 
-## Usage
+**You only need to configure your API key once on your computer.**
 
-Open the Git repository where you want to make a commit, then stage the files you want to include:
+### 💻 How to Use CommitCraft
 
-```bash
+After setup, open any Git project in PowerShell.
+
+**1. Navigate to your project**
+
+```powershell
+cd "C:\path\to\your-project"
+```
+
+Replace the example path with your actual project folder.
+
+**2. Stage the files you want to commit**
+
+```powershell
+git status
 git add path/to/your-file
 ```
 
-Run CommitCraft using the path where you installed it:
+Replace the example file path with the file you want to commit. You can stage multiple files if needed.
+
+**3. Generate an AI commit message**
 
 ```powershell
-node "C:\path\to\commit-craft\index.js"
+commitcraft
 ```
 
-Choose whether to accept the generated message, regenerate it, edit it manually, or cancel.
+CommitCraft analyzes your Git changes and generates a Conventional Commit message using Gemini.
 
-## Security
+Choose an option:
 
-Keep `.env` private. Only commit `.env.example`, never your real API credentials.
+- **Enter / y** — Accept the message and create the commit.
+- **r** — Generate another message.
+- **e** — Enter your own commit message.
+- **q** — Cancel.
+
+**4. Push your commit to GitHub**
+
+After the commit succeeds, run:
+
+```powershell
+git push
+```
+
+### 🔐 Security
+
+- Each developer must use their own Gemini API key.
+- Your real `.env` file must never be uploaded to GitHub.
+- Keep `.env` in `.gitignore`.
+- Only share `.env.example`, which contains the environment variable template.
+
+### ⚡ That's it!
+
+Set up once, then run `commitcraft` from any Git project on your computer.
 
 Happy committing! 🚀
