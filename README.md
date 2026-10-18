@@ -1,4 +1,3 @@
-# commit-craft
 # ⚡ CommitCraft
 
 AI-powered Git commit messages using Google Gemini. Generate, review, edit, and commit smarter.
